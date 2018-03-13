@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+
+hello-thundra/node_modules/
+hello-thundra/.serverless/
+hello-thundra/package-lock.json
+
+hello-thundra-async/node_modules/
+hello-thundra-async/.serverless/
+hello-thundra-async/package-lock.json
+
+.DS_Store
