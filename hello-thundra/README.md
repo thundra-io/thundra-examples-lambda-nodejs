@@ -1,4 +1,4 @@
-# Hello Thundra Project
+# Hello Thundra
 This is a simple example to get started with Thundra.
 
 You will learn how to observe the invocation metrics of lambda functions with Thundra using **default settings**.
@@ -33,6 +33,8 @@ sls deploy
 ```
 
 #### 4 - Invoke
+
+In `thundra-examples-lambda-nodejs/hello-thundra` directory:
 
 ```bash
 sls invoke --function hello-thundra --data '{"msg":"Hello"}'
