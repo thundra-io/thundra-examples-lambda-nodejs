@@ -1,7 +1,7 @@
 {
-  "name": "hello-thundra",
+  "name": "hello-thundra-async",
   "version": "1.0.0",
-  "description": "Thundra Example Lambda Project",
+  "description": "Thundra Async Monitoring Example Lambda Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^1.0.1"
+    "@thundra/core": "^1.0.1",
+    "serverless-plugin-thundra-monitor-cw": "^2.1.1"
   }
 }
