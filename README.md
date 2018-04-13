@@ -8,12 +8,22 @@ You can install **serverless** easily by:
 npm install serverless -g
 ```
 
-## Hello Thundra
-This is a simple example to get started with Thundra.
+## hello-thundra
+Simple example to get started with Thundra.
 
-With [this example](./hello-thundra) you will learn how to observe the invocation metrics of lambda functions using Thundra with **default settings**.
+You will learn how to observe the invocation metrics of lambda functions using Thundra with **default settings**.
 
-## Hello Thundra Async
-This is a simple example to get started with Thundra and **async monitoring**.
+[Go to example](./hello-thundra)
 
-With [this example](./hello-thundra-async) you will learn how to observe the invocation metrics of lambda functions using Thundra with **async monitoring**.
+## hello-thundra-async
+Simple example to get started with Thundra and **async monitoring**.
+
+You will learn how to observe the invocation metrics of lambda functions using Thundra with **async monitoring**.
+
+[Go to example](./hello-thundra-async)
+
+## express-serverless-http
+
+Example using [express](https://www.npmjs.com/package/express) and [serverless-http](https://www.npmjs.com/package/serverless-http) with **async monitoring**.
+
+[Go to example](./express-serverless-http)

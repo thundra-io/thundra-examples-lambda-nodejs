@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^1.2.0"
+    "@thundra/core": "^1.3.0"
   }
 }

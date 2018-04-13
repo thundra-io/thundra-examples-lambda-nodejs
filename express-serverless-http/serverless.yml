@@ -1,0 +1,47 @@
+service: express-serverless-http
+
+custom:
+  deploymentBucket: #TODO: enter your AWS S3 deployment bucket here
+  thundraApiKey: #TODO: enter your API key here
+  stage: dev #Configure your stage if you want
+  region: us-west-2 #Configure your AWS region if you want
+  profile: default #Configure your AWS profile if you want
+  skipLogGroupCreation: true
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  profile: ${self:custom.profile}
+  deploymentBucket: ${self:custom.deploymentBucket}
+  memorySize: 256
+  timeout: 50
+  environment:
+      thundra_apiKey: ${self:custom.thundraApiKey}
+      thundra_lambda_publish_cloudwatch_enable: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:*
+      Resource: [
+        "*"
+      ]
+
+
+plugins:
+  - serverless-plugin-thundra-monitor-cw
+
+functions:
+  express-serverless-http:
+    name: express-serverless-http
+    handler: index.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{path+}
+          method: ANY
+          cors: true
