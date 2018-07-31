@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
 
-node_modules/
+hello-thundra/node_modules/
 hello-thundra/.serverless/
 
 hello-thundra-async/node_modules/
