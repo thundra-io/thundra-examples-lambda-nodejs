@@ -16,11 +16,11 @@ npm install
 1.  **Go to the [Amazon Developer Portal](http://developer.amazon.com).  In the top-right corner of the screen, click the "Sign In" button.**
 (If you don't already have an account, you will be able to create a new one for free.)
 
-2.  Once you have signed in, move your mouse over the **Your Alexa Consoles** text at the top of the screen and Select the **Skills (New)** Link.
+2.  Once you have signed in, Select **Alexa** first and move your mouse over the Your Alexa Consoles.
 
 3.  From the **Alexa Skills Console (New Console)** select the **Create Skill** button near the top of the screen.
 
-4. Give your new skill a **Name**. This is the name that will be shown in the Alexa Skills Store, and the name your users will refer to. Push Next.
+4. Give your new skill a **Name**. This is the name that will be shown in the Alexa Skills Store, and the name your users will refer to.
 
 5. Select the **Custom** model at the top of the page to add to your skill and select the **Create Skill** button at the top right.
 
@@ -30,6 +30,10 @@ npm install
 
 	**Note:** You should notice that **Intents** and **Slot Types** will auto populate based on the JSON Interaction Model that you have now applied to your skill. 
 
+7. **Integration with AWS Lambda**
+    1. On the left hand navigation panel. Select the **Endpoint** tab. Select  **AWS Lambda ARN** as Service Endpoint Type. Copy your Skill ID and paste it **alexaSkill** in your `serverless.yml` and make the necessary changes in `serverless.yml` which are marked with **TODO:**. Then deploy your lambda function with `sls deploy` command. 
+    2. Go to your AWS console and select **Lambda** service and go to **Functions** tab and click `thundra-game-of-thrones-wiki`. Copy the arn on top right corner of the screen.
+    3. Go back to Alexa Skill console. Copy the arn into the Default Region and click **Save Endpoints**
 
 #### 3 - Configuration
 
@@ -41,7 +45,8 @@ custom:
     deploymentBucket: <your-s3-deployment-bucket>
     ...
 ```
-Alexa Skill ID provided in Enpoint Setup on Alexa Developer Console:
+Alexa Skill ID provided in Endpoint Setup on Alexa Developer Console.
+Click endpoint on Alexa developer console, and choose lambda ARN to view your Alexa Skill ID:
 ```yml
 events:
       - alexaSkill: <your-alexa-skill-id>
@@ -50,7 +55,7 @@ events:
 
 #### 4 - Deploy
 
-In `thundra-examples-lambda-nodejs/express-serverless-http` directory:
+In `hundra-examples-lambda-nodejs/alexa-skill-demo` directory:
 
 ```bash
 sls deploy
@@ -58,8 +63,8 @@ sls deploy
 
 #### 5 - Test
 
-You can test the skill with Alexa Simulator.
+You can test the skill with Alexa Simulator after the **Build** is complete. Click **Test** on the top bar and start testing. You can launch the skill by saying `game of thrones wiki` to Alexa Simulator.
 
-#### 5 - Enjoy your flight with Thundra!
+#### 6 - Enjoy your flight with Thundra!
 
 Visit Thundra to observe your metrics. It might take 1-2 minutes to be visible.

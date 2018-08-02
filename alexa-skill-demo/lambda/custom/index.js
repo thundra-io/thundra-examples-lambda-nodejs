@@ -73,7 +73,7 @@ const HouseOverlordIntentHandler = {
             .withSimpleCard(APP_NAME, speechText)
             .getResponse();
     },
-}
+};
 
 const WhoPlayedCharacterIntentHandler = {
     canHandle(handlerInput) {
@@ -90,7 +90,7 @@ const WhoPlayedCharacterIntentHandler = {
         const data = await get('characters', {
             name : characterName
         });
-        let speechText = `Cannot find infomation about ${characterName}`;
+        let speechText = `Cannot find information about ${characterName}`;
 
         if (data.length !== 0) {
             speechText = ` ${characterName} is played by ${data[0].playedBy[0]}`;
@@ -208,7 +208,7 @@ const validate = qry => {
 
 const get = async (endpoint = '', opt = {}) => {
     const tracer = thundra.tracer();
-    const query = validate(opt)
+    const query = validate(opt);
     try {
         const span = tracer.startSpan('API Call');
         span.setTag('Base URL', BASE_URL);
@@ -229,7 +229,7 @@ const get = async (endpoint = '', opt = {}) => {
             error: e.response.data.error
         }
     }
-}
+};
 
 const extractIdFromURL = (baseURL) => {
     const tracer = thundra.tracer();
@@ -238,7 +238,7 @@ const extractIdFromURL = (baseURL) => {
     const id = paths[paths.length - 1];
     span.finish();
     return id;
-}
+};
 
 const skillBuilder = Alexa.SkillBuilders.custom(); 
 
