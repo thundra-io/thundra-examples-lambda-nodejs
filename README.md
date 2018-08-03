@@ -27,3 +27,9 @@ You will learn how to observe the invocation metrics of lambda functions using T
 Example using [express](https://www.npmjs.com/package/express) and [serverless-http](https://www.npmjs.com/package/serverless-http) with **async monitoring**.
 
 [Go to example](./express-serverless-http)
+
+## alexa-skill-demo
+
+Example Alexa Skill demo using [Alexa Skill Kit Node.js SDK](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs)
+
+[Go to example](./alexa-skill-demo)

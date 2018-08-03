@@ -1,0 +1,199 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "game of thrones wiki",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "WhoPlayedCharacterIntent",
+                    "slots": [
+                        {
+                            "name": "character",
+                            "type": "AMAZON.FictionalCharacter"
+                        }
+                    ],
+                    "samples": [
+                        "who is the actress for {character}",
+                        "who is the actor for {character}",
+                        "who played {character}"
+                    ]
+                },
+                {
+                    "name": "AskBookInfoIntent",
+                    "slots": [
+                        {
+                            "name": "nth",
+                            "type": "OrderNoun"
+                        }
+                    ],
+                    "samples": [
+                        "What is the {nth} book of Game of Thrones",
+                        "What is the {nth} book of A Song of Ice and Fire series"
+                    ]
+                },
+                {
+                    "name": "HouseOverlordIntent",
+                    "slots": [
+                        {
+                            "name": "HouseName",
+                            "type": "Houses"
+                        }
+                    ],
+                    "samples": [
+                        "Who rules house {HouseName}",
+                        "Who is the overlord of house {HouseName} "
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "AMAZON.FictionalCharacter",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Ned Stark"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Arya Stark",
+                                "synonyms": [
+                                    "aria stark",
+                                    "Aria Stark"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "OrderNoun",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "tenth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventh"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fith"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fourth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "third"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "second"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "first"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Houses",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Baelish of Harrenhal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ashwood"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ashford"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Arryn of the Eyrie"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Arryn of Gulltown"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Reach"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ambrose"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Amber"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Allyrion of Godsgrace"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Lannister of Casterly Rock",
+                                "synonyms": [
+                                    "Lannister"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Algood"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

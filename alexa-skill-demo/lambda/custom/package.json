@@ -1,0 +1,25 @@
+{
+  "name": "game-of-thrones-wiki",
+  "version": "1.0.0",
+  "description": "An Alexa Skill for Game Of Thrones API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "thundra",
+    "gameofthrones"
+  ],
+  "author": "ibrahim gurses",
+  "license": "ISC",
+  "dependencies": {
+    "@thundra/core": "^1.5.0",
+    "@thundra/log": "^1.0.2",
+    "ask-sdk-core": "^2.0.0",
+    "ask-sdk-model": "^1.0.0",
+    "axios": "^0.18.0",
+    "json-beautify": "^1.0.1",
+    "words-to-numbers": "^1.5.1"
+  }
+}
