@@ -34,7 +34,7 @@
                     ]
                 },
                 {
-                    "name": "AskBookInfoIntent",
+                    "name": "BookInfoIntent",
                     "slots": [
                         {
                             "name": "nth",

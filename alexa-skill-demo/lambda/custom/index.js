@@ -105,10 +105,10 @@ const WhoPlayedCharacterIntentHandler = {
     },
 };
 
-const AskBookInfoIntentHandler = {
+const BookInfoIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'AskBookInfoIntent';
+            && handlerInput.requestEnvelope.request.intent.name === 'BookInfoIntent';
     },
     async handle(handlerInput) {
         const tracer = thundra.tracer();
@@ -245,7 +245,7 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 const lambdaHandler = skillBuilder.addRequestHandlers(
     LaunchRequestHandler,
     WhoPlayedCharacterIntentHandler,
-    AskBookInfoIntentHandler,
+    BookInfoIntentHandler,
     HouseOverlordIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
