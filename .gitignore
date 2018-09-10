@@ -10,4 +10,7 @@ hello-thundra-async/.serverless/
 alexa-skill-demo/lambda/custom/node_modules/
 alexa-skill-demo/lambda/custom/.serverless/
 
+integration-demo/node_modules/
+integration-demo/.serverless/
+
 .DS_Store

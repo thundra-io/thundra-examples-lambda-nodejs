@@ -33,3 +33,9 @@ Example using [express](https://www.npmjs.com/package/express) and [serverless-h
 Example Alexa Skill demo using [Alexa Skill Kit Node.js SDK](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs)
 
 [Go to example](./alexa-skill-demo)
+
+## integration-demo
+
+Simple example which showcase Thundra's integration capabilites. Demo app feautures PostgreSQL and HTTP integrations
+
+[Go to example](./integration-demo)
