@@ -1,10 +1,10 @@
 service: avengers-demo
 
 custom:
-  deploymentBucket: yusuf-test-thundra #TODO: enter your AWS S3 deployment bucket here
-  thundraApiKey: ce7e63db-3a96-4372-81be-6863945d7c86 #TODO: enter your API key here
+  deploymentBucket: #TODO: enter your AWS S3 deployment bucket here
+  thundraApiKey: #TODO: enter your API key here
   stage: dev #Configure your stage if you want
-  region: eu-west-2 #Configure your AWS region if you want
+  region: #Configure your AWS region if you want
   profile: default #Configure your AWS profile if you want
 
 provider:
