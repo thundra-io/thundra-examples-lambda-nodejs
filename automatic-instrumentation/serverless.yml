@@ -1,0 +1,32 @@
+service: avengers-demo
+
+custom:
+  deploymentBucket: yusuf-test-thundra #TODO: enter your AWS S3 deployment bucket here
+  thundraApiKey: ce7e63db-3a96-4372-81be-6863945d7c86 #TODO: enter your API key here
+  stage: dev #Configure your stage if you want
+  region: eu-west-2 #Configure your AWS region if you want
+  profile: default #Configure your AWS profile if you want
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  profile: ${self:custom.profile}
+  deploymentBucket: ${self:custom.deploymentBucket}
+  memorySize: 256
+  timeout: 300
+  environment:
+      thundra_apiKey: ${self:custom.thundraApiKey}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:*
+      Resource: [
+        "*"
+      ]
+
+functions:
+  avengers-demo:
+    name: avengers-demo
+    handler: index.handler
