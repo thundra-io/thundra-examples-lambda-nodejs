@@ -2,7 +2,7 @@ const thundra = require("@thundra/core");
 
 const thundraWrapper = thundra({
     traceConfig: {
-        traceDefs: [{
+        traceableConfigs: [{
             pattern: 'user.pg.*',
             traceArgs: true,
             traceReturnValue: true,
@@ -19,7 +19,7 @@ const UserService = require('./user/pg/service');
 exports.handler = thundraWrapper((event, context, callback) => {
     const userService = new UserService();
 
-    userService.y(event.id, (res) => {
+    userService.get(event.id, (res) => {
         if (res.length === 0) {
             callback(null, {
                 'statusCode': 404,
