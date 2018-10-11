@@ -15,7 +15,6 @@ exports.handler = thundra(config)((event, context, callback) => {
             var items = results.Items;
             for (i = 0; i < items.length; i++) {
                 if (items[i].hero.S == event.hero) {
-                    console.log(JSON.stringify(items[i].hero));
                     context.succeed("Hero has already been enlisted");
                 }
             }
