@@ -12,7 +12,6 @@ exports.handler = thundra(config)((event, context, callback) => {
     
     heroServices.getHero(event).then(
         (results) => {
-            var found = false;
             var items = results.Items;
             for (i = 0; i < items.length; i++) {
                 if (items[i].hero.S == event.hero) {
@@ -25,10 +24,10 @@ exports.handler = thundra(config)((event, context, callback) => {
             }).catch(
                 (err) => {
                     context.fail("Could not add member- " + err);
-                })
+                });
         }).catch(
             (err) => {
                 context.fail('ERROR ' + err)
-            })
+            });
 });
 

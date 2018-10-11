@@ -1,4 +1,4 @@
-service: avengers-automatic-instrumentation
+service: thundra-automatic-instrumentation-example
 
 custom:
   deploymentBucket: #TODO: enter your AWS S3 deployment bucket here
@@ -28,6 +28,6 @@ provider:
       ]
 
 functions:
-  avengers-automatic-instrumentation:
-    name: avengers-automatic-instrumentation
+  thundra-automatic-instrumentation-example:
+    name: thundra-automatic-instrumentation-example
     handler: index.handler
