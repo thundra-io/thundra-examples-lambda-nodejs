@@ -1,4 +1,4 @@
-const tableName = ''; /////////////ENTER YOUR DYNAMOTABLE NAME/////////////
+const tableName = '<Enter your DynamoDB table name>';
 var datetime = new Date().getTime().toString();
 const AWS = require('aws-sdk');
 const dynamodb = new AWS.DynamoDB();

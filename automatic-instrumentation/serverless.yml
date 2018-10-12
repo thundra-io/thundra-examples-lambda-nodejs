@@ -1,4 +1,4 @@
-service: thundra-automatic-instrumentation-example
+service: automatic-instrumentation-example
 
 custom:
   deploymentBucket: #TODO: enter your AWS S3 deployment bucket here
@@ -28,6 +28,6 @@ provider:
       ]
 
 functions:
-  thundra-automatic-instrumentation-example:
-    name: thundra-automatic-instrumentation-example
+  automatic-instrumentation-example:
+    name: automatic-instrumentation-example
     handler: index.handler
