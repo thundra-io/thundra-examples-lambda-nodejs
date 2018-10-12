@@ -18,7 +18,7 @@ npm install
 #### 2 - Create your DynamoDB table
 > 2.1 Login to your AWS console and navigate to DynamoDB services and click 'Create table'
 
-> 2.2 Type in your preferred table name in the 'Table name' field, but ensure that you write `hero` in the 'Primayr key' field.
+> 2.2 Type in your preferred table name in the 'Table name' field, but ensure that you write `hero` in the 'Primary key' field.
 
 > 2.3 Click on the 'Create' button to finish your DynamoDB table creation
 
@@ -54,7 +54,7 @@ sls deploy
 In `thundra-examples-lambda-nodejs/automatic-instrumentation` directory:
 
 ```bash
-sls invoke --function hello-thundra --data '{"hero":"Spiderman"}'
+sls invoke --function automatic-instrumentation-example --data '{"hero":"Spiderman"}'
 ```
 
 #### 5 - Enjoy your flight with Thundra!
