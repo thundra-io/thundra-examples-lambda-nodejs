@@ -54,7 +54,7 @@ sls deploy
 In `thundra-examples-lambda-nodejs/automatic-instrumentation` directory:
 
 ```bash
-sls invoke --function hello-thundra --data '{"hero":"Spiderman"}'
+sls invoke --function automatic-instrumentation-example --data '{"hero":"Spiderman"}'
 ```
 
 #### 5 - Enjoy your flight with Thundra!
