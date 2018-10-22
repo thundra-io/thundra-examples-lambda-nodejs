@@ -12,7 +12,7 @@
   "author": "Syed Sarjeel Yusuf",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.0",
+    "@thundra/core": "^2.0.0",
     "aws-sdk": "^2.316.0",
     "opentracing": "^0.14.3"
   }
