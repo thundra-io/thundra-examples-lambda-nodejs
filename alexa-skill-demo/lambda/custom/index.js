@@ -4,8 +4,7 @@
 const Alexa = require('ask-sdk-core');
 const thundra = require("@thundra/core");
 const axios = require('axios');
-const thundraLog = require("@thundra/log");
-const logger = thundraLog.createLogger();
+const logger = thundra.createLogger();
 const beautify = require("json-beautify");
 const { wordsToNumbers } = require('words-to-numbers');
 const BASE_URL = 'https://www.anapioficeandfire.com/api/';
