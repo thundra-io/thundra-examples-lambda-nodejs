@@ -14,7 +14,7 @@
   "author": "ibrahim gurses",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.0.1",
+    "@thundra/core": "^2.0.4",
     "ask-sdk-core": "^2.0.0",
     "ask-sdk-model": "^1.0.0",
     "axios": "^0.18.0",
