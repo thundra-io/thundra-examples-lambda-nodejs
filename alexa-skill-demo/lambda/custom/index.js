@@ -283,5 +283,4 @@ const lambdaHandler = skillBuilder.addRequestHandlers(
     .lambda();
 
 exports.handler = thundra({
-    plugins: [thundraLog.createLogPlugin()]
 })(lambdaHandler);
