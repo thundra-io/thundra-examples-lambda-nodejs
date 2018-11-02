@@ -1,4 +1,4 @@
-const tableName = '<Enter your DynamoDB table name>';
+const tableName = 'Avengers';
 var datetime = new Date().getTime().toString();
 const AWS = require('aws-sdk');
 const dynamodb = new AWS.DynamoDB();
@@ -23,7 +23,7 @@ var addHero = function (event) {
     });
 }
 
-var getHero = function (event) {
+const getHero = function () {
     return new Promise(function (resolve, reject) {
 
         var params = {
@@ -37,7 +37,7 @@ var getHero = function (event) {
             }
         });
     });
-}
+};
 
 module.exports = {
     getHero,

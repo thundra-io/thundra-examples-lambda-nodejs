@@ -2,31 +2,37 @@ const thundra = require('@thundra/core');
 
 var config = {
     traceConfig: {
-        traceDefs: [{
+        traceableConfigs: [{
             pattern: 'services.*'
-        }]
+        }],
+        //integrations : ['aws']
     }
-}
+};
+
 exports.handler = thundra(config)((event, context, callback) => {
     const heroServices = require('services');
-    
+    let flag = false;
     heroServices.getHero(event).then(
         (results) => {
             var items = results.Items;
             for (i = 0; i < items.length; i++) {
                 if (items[i].hero.S == event.hero) {
-                    context.succeed("Hero has already been enlisted");
+                    flag = true;
+                    callback(null, "Hero has already been enlisted");
                 }
             }
+
+            if(!flag) {
                 heroServices.addHero(event).then((results) => {
-                context.succeed("Enlisted");
-            }).catch(
-                (err) => {
-                    context.fail("Could not add member- " + err);
-                });
+                    callback(null,"Enlisted");
+                }).catch(
+                    (err) => {
+                        callback("Could not add member- " + err,null);
+                    });
+            }
         }).catch(
             (err) => {
-                context.fail('ERROR ' + err)
+                callback('ERROR ' + err, null);
             });
 });
 
