@@ -5,7 +5,6 @@ var config = {
         traceableConfigs: [{
             pattern: 'services.*'
         }],
-        //integrations : ['aws']
     }
 };
 
