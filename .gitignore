@@ -13,4 +13,7 @@ alexa-skill-demo/lambda/custom/.serverless/
 integration-demo/node_modules/
 integration-demo/.serverless/
 
+chaos-injection/node_modules/
+chaos-injection/.serverless/
+
 .DS_Store

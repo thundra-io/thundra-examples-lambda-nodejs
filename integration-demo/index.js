@@ -7,8 +7,7 @@ const thundraWrapper = thundra({
             traceArgs: true,
             traceReturnValue: true,
             traceError: true,
-        }],
-        integrations:['http', 'pg'],
+        }]
     },
 });
 

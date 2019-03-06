@@ -1,18 +1,20 @@
 {
-  "name": "integration-demo",
+  "name": "chaos-injection",
   "version": "1.0.0",
-  "description": "Thundra Integrations Example Lambda Project",
+  "description": "Thundra Chaos Injection Example Lambda Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "thundra"
+    "thundra",
+    "chaos"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.0.8",
-    "pg": "6.4.0"
+    "@thundra/core": "^2.0.9",
+    "pg": "6.4.0",
+    "redis": "^2.8.0"
   }
 }
