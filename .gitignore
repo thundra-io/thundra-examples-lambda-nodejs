@@ -16,4 +16,7 @@ integration-demo/.serverless/
 chaos-injection/node_modules/
 chaos-injection/.serverless/
 
+apollo-server-lambda/node_modules/
+apollo-server-lambda/.serverless/
+
 .DS_Store
