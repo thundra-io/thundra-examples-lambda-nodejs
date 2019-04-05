@@ -1,5 +1,6 @@
-# Hello Thundra
-This is a simple project to demo thundra and apollo-server-lambda working together
+# Thundra apollo-server-lambda Example
+
+This is a simple project to demo thundra and apollo-server-lambda working together.
 
 ## How to run using [serverless](https://serverless.com/)
 
