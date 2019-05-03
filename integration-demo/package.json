@@ -1,0 +1,18 @@
+{
+    "name": "integration-demo",
+    "version": "1.0.0",
+    "description": "Thundra Integrations Example Lambda Project",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "thundra"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@thundra/core": "^2.2.0",
+      "pg": "6.4.0"
+    }
+}

@@ -1,0 +1,36 @@
+service: apollo-server-lambda-example
+
+custom:
+  deploymentBucket: #TODO: enter your AWS S3 deployment bucket here
+  thundraApiKey: #TODO: enter your API key here
+  stage: dev #Configure your stage if you want
+  region: us-west-2 #Configure your AWS region if you want
+  profile: default #Configure your AWS profile if you want
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  profile: ${self:custom.profile}
+  deploymentBucket: ${self:custom.deploymentBucket}
+  memorySize: 256
+  timeout: 30
+  environment:
+      thundra_apiKey: ${self:custom.thundraApiKey}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:*
+      Resource: [
+        "*"
+      ]
+
+functions:
+  apollo-server-lambda-example:
+    name: apollo-server-lambda-example
+    handler: index.handler
+    events:
+      - http:
+          path: graphql
+          method: any

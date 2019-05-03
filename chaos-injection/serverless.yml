@@ -1,0 +1,36 @@
+service: chaos-injection-demo
+
+custom:
+  deploymentBucket: #TODO: enter your AWS S3 deployment bucket here
+  stage: dev #Configure your stage if you want
+  region: us-west-2 #Configure your AWS region if you want
+  profile: default #Configure your AWS profile if you want
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  profile: ${self:custom.profile}
+  deploymentBucket: ${self:custom.deploymentBucket}
+  memorySize: 256
+  timeout: 5
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:*
+      Resource: [
+        "*"
+      ]
+  
+functions:
+  error_injection_example:
+    name: chaos_error_injection_example
+    handler: error_injection_example.handler
+    environment:
+      thundra_agent_lambda_trace_span_listener: FilteringSpanListener[listener=ErrorInjectorSpanListener,config.errorType=RedisError,config.injectOnFinish=true,filter.className=Redis,filter.tag.redis.command=GET]
+  latency_injection_example:
+    name: chaos_latency_injection_example
+    handler: latency_injection_example.handler
+    environment:
+      thundra_agent_lambda_trace_span_listener: FilteringSpanListener[listener=LatencyInjectorSpanListener,config.delay=2000,config.injectOnFinish=true,filter.className=AWS-Lambda,filter.tag.aws.lambda.name=upstream-lambda]

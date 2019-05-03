@@ -4,8 +4,7 @@
 const Alexa = require('ask-sdk-core');
 const thundra = require("@thundra/core");
 const axios = require('axios');
-const thundraLog = require("@thundra/log");
-const logger = thundraLog.createLogger();
+const logger = thundra.createLogger();
 const beautify = require("json-beautify");
 const { wordsToNumbers } = require('words-to-numbers');
 const BASE_URL = 'https://www.anapioficeandfire.com/api/';
@@ -16,7 +15,13 @@ const LaunchRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
+        const tracer = thundra.tracer();  
+        const span = tracer.startSpan('AMAZON.HelpIntent');
+        
         const speechText = 'Welcome to Thundra Game Of Thrones Wiki. Please ask anything about Game of Thrones.';
+        
+        span.setTag('speechText', speechText);
+        span.finish();
 
         return handlerInput.responseBuilder
             .speak(speechText)
@@ -33,7 +38,13 @@ const HelpIntentHandler = {
     },
 
     handle(handlerInput) {
+        const tracer = thundra.tracer();  
+        const span = tracer.startSpan('AMAZON.HelpIntent');
+        
         const speechText = 'You can ask questions about books, locations and character of Game of Thrones.';
+        
+        span.setTag('speechText', speechText);
+        span.finish();
 
         return handlerInput.responseBuilder
             .speak(speechText)
@@ -149,8 +160,14 @@ const CancelAndStopIntentHandler = {
                 || handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent');
     },
     handle(handlerInput) {
+        const tracer = thundra.tracer();  
+        const span = tracer.startSpan('AMAZON.CancelIntent || AMAZON.StopIntent');
+        
         const speechText = 'Goodbye!';
-
+        
+        span.setTag('speechText', speechText);
+        span.finish();
+    
         return handlerInput.responseBuilder
             .speak(speechText)
             .withSimpleCard(APP_NAME, speechText)
@@ -163,8 +180,15 @@ const SessionEndedRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
     },
     handle(handlerInput) {
-        console.log(`Session ended with reason: ${handlerInput.requestEnvelope.request.reason}`);
+        const tracer = thundra.tracer();  
+        const span = tracer.startSpan('SessionEndedRequest');
+        
+        console.error(`Session ended with reason: ${handlerInput.requestEnvelope.request.reason}`);
         logger.error(`Session ended with reason: ${handlerInput.requestEnvelope.request.reason}`);
+        
+        span.setTag('reason', handlerInput.requestEnvelope.request.reason);
+        span.finish();
+       
         return handlerInput.responseBuilder.getResponse();
     },
 };
@@ -175,9 +199,13 @@ const ErrorHandler = {
     },
 
     handle(handlerInput, error) {
-        console.log(`Error handled: ${error.message}`);
+        console.error(`Error handled: ${error.message}`);
         logger.error(`Error handled: ${error.message}`);
         const tracer = thundra.tracer();
+        const currentSpan = tracer.getActiveSpan();
+        if (currentSpan) {
+             currentSpan.setErrorTag(error);
+        }
         tracer.finishSpan();
         return handlerInput.responseBuilder
             .speak('Sorry, I can\'t understand the command. Please say again.')
@@ -222,7 +250,7 @@ const get = async (endpoint = '', opt = {}) => {
         
         return data
     } catch (e) {
-        console.log(e.message);
+        console.error(e.message);
         logger.error(e.message);
         return {
             status: e.response.status,
@@ -255,5 +283,4 @@ const lambdaHandler = skillBuilder.addRequestHandlers(
     .lambda();
 
 exports.handler = thundra({
-    plugins: [thundraLog.createLogPlugin()]
 })(lambdaHandler);

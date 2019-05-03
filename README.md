@@ -39,3 +39,16 @@ Example Alexa Skill demo using [Alexa Skill Kit Node.js SDK](https://github.com/
 Example demonstrating automatic instrumentation to enable tracing capabilities.
 
 [Go to example](./automatic-instrumentation)
+
+## integration-demo
+
+Simple example which showcase Thundra's integration capabilites. Demo app feautures PostgreSQL and HTTP integrations
+
+[Go to example](./integration-demo)
+
+## apollo-server-lambda-demo
+
+Simple example which showcase Thundra's integration with `apollo-server-lambda`.
+
+[Go to example](./apollo-server-lambda)
+
