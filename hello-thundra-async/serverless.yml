@@ -9,7 +9,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   stage: ${self:custom.stage}
   region: ${self:custom.region}
   profile: ${self:custom.profile}
