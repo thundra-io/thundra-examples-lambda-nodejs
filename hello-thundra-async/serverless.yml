@@ -28,7 +28,7 @@ provider:
       ]
       
 plugins:
-  - serverless-plugin-thundra-monitor-cw
+  - serverless-plugin-thundra-lambda-adapters-cw
 
 functions:
   hello-thundra-async:
