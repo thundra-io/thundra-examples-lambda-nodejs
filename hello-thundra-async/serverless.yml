@@ -18,7 +18,7 @@ provider:
   timeout: 300
   environment:
     thundra_apiKey: ${self:custom.thundraApiKey}
-    thundra_lambda_publish_cloudwatch_enable: true
+    thundra_agent_lambda_report_cloudwatch_enable: true
   iamRoleStatements:
     - Effect: Allow
       Action:
