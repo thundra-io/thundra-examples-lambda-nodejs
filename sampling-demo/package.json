@@ -1,0 +1,14 @@
+{
+  "name": "sampling-demo",
+  "version": "1.0.0",
+  "description": "Thundra Sample Example Lambda Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@thundra/core": "^2.3.0"
+  }
+}

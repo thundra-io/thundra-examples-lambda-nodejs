@@ -1,22 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
 
-hello-thundra/node_modules/
-hello-thundra/.serverless/
-
-hello-thundra-async/node_modules/
-hello-thundra-async/.serverless/
-
-alexa-skill-demo/lambda/custom/node_modules/
-alexa-skill-demo/lambda/custom/.serverless/
-
-integration-demo/node_modules/
-integration-demo/.serverless/
-
-chaos-injection/node_modules/
-chaos-injection/.serverless/
-
-apollo-server-lambda/node_modules/
-apollo-server-lambda/.serverless/
+*node_modules
+*.serverless
 
 .DS_Store
