@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.3.0",
+    "@thundra/core": "^2.4.1",
     "serverless-plugin-thundra-lambda-adapters-cw": "^1.0.2"
   }
 }
