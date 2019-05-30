@@ -52,3 +52,15 @@ Simple example which showcase Thundra's integration with `apollo-server-lambda`.
 
 [Go to example](./apollo-server-lambda)
 
+## sampling-demo
+
+Simple example which showcase Thundra's sampling capabilities
+
+[Go to example](./sampling-demo)
+
+## thundra-node10x
+
+This project demonstrates `async-hook` api only avaliable in nodejs.10x runtime of AWS Lambda.
+
+[Go to example](./thundra-node10x)
+
