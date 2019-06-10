@@ -64,3 +64,9 @@ This project demonstrates `async-hook` api only avaliable in nodejs.10x runtime 
 
 [Go to example](./thundra-node10x)
 
+## claudia-js
+
+This project demonstrates `Claudia.js` API builder with `Thundra` integration.
+
+[Go to example](./claudia-js)
+
