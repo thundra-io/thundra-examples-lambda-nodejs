@@ -1,0 +1,17 @@
+{
+  "name": "aws-serverless-express-demo",
+  "version": "1.0.0",
+  "description": "Thundra example for aws-serverless-express proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thundra",
+  "license": "ISC",
+  "dependencies": {
+    "@thundra/core": "^2.4.1",
+    "aws-serverless-express": "^3.3.6",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

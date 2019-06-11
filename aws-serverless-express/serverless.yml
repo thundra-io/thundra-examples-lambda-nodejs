@@ -1,0 +1,36 @@
+service: aws-serverless-express
+
+custom:
+  thundraApiKey: #TODO: enter your API key here
+  stage: dev #Configure your stage if you want
+  region: us-west-2 #Configure your AWS region if you want
+  profile: default #Configure your AWS profile if you want
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  profile: ${self:custom.profile}
+  memorySize: 256
+  timeout: 30
+  environment:
+      thundra_apiKey: ${self:custom.thundraApiKey}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:*
+      Resource: [
+        "*"
+      ]
+
+functions:
+  aws-serverless-express:
+    name: aws-serverless-express
+    handler: index.handler
+    events:
+      - http: 
+          method: ANY
+          path: /{proxy+}
+
+      

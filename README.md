@@ -70,3 +70,9 @@ This project demonstrates `Claudia.js` API builder with `Thundra` integration.
 
 [Go to example](./claudia-js)
 
+## aws-serverless-express
+
+This is a simple example to integrate Thundra with `aws-serverless-express`.
+
+[Go to example](./aws-serverless-express)
+

@@ -41,7 +41,7 @@ npm run update
 #### 4 - Invoke
 
 ```bash
-curl -X POST https://XXXXXXXXX.execute-api.us-west-2.amazonaws.com/latest/pokemon
+curl -X GET https://XXXXXXXXX.execute-api.us-west-2.amazonaws.com/latest/pokemon
 ```
 
 #### 5 - Enjoy your flight with Thundra!
