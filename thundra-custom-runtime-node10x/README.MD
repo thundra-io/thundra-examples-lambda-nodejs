@@ -51,7 +51,7 @@ sls deploy
 In `thundra-examples-lambda-nodejs/thundra-custom-runtime-node10x` directory:
 
 ```bash
-sls invoke --function async-generator'
+sls invoke --function async-generator
 ```
 
 #### 5 - Enjoy your flight with Thundra!
