@@ -76,3 +76,10 @@ This is a simple example to integrate Thundra with `aws-serverless-express`.
 
 [Go to example](./aws-serverless-express)
 
+## thundra-custom-runtime-node10x
+
+This is a simple adding custom Node Runtime to Thundra Custom Runtime.
+
+[Go to example](./thundra-custom-runtime-node10x)
+
+

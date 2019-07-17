@@ -1,0 +1,39 @@
+service: thundra-custom-runtime-node10x
+
+custom:
+  thundraApiKey: #Configure your thundra-api-key 
+  stage: dev #Configure your stage if you want
+  region: us-west-2 #Configure your AWS region if you want
+  profile: default #Configure your AWS profile if you want
+  thundra:
+    node:
+      layer:
+        version: 17
+plugins:
+  - serverless-plugin-thundra
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  profile: ${self:custom.profile}
+  memorySize: 256
+  timeout: 300
+  environment:
+      thundra_apiKey: ${self:custom.thundraApiKey}
+      NODE_RUNTIME_PATH: /opt/bin/node
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:*
+      Resource: [
+        "*"
+      ]
+
+functions:
+  async-generator:
+    name: async-generator
+    handler: index.handler
+    layers:
+      - arn:aws:lambda:${self:custom.region}:553035198032:layer:nodejs10:14

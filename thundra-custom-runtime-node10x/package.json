@@ -1,0 +1,15 @@
+{
+  "name": "hello-thundra",
+  "version": "1.0.0",
+  "description": "Thundra Example Lambda Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@thundra/core": "^2.5.4",
+    "serverless-plugin-thundra": "^2.0.0"
+  }
+}
