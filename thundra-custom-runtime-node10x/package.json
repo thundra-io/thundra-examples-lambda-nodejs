@@ -1,7 +1,7 @@
 {
-  "name": "hello-thundra",
+  "name": "thundra-custom-runtime-node10x",
   "version": "1.0.0",
-  "description": "Thundra Example Lambda Project",
+  "description": "This is a simple adding custom Node Runtime to Thundra Custom Runtime.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

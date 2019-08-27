@@ -82,4 +82,10 @@ This is a simple adding custom Node Runtime to Thundra Custom Runtime.
 
 [Go to example](./thundra-custom-runtime-node10x)
 
+## thundra-knex-mysql2
+
+This is a simple project demonstrate thundra usage with knex.
+
+[Go to example](./thundra-knex-mysql2)
+
 

@@ -11,7 +11,7 @@
   "author": "Thundra",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.5.2",
+    "@thundra/core": "^2.5.7",
     "claudia": "^5.5.0",
     "claudia-api-builder": "^4.1.2",
     "pokemon": "^2.0.0"

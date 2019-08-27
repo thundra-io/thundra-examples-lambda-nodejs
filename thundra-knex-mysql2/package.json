@@ -1,7 +1,7 @@
 {
-  "name": "express-serverless-http",
+  "name": "thundra-knex-mysql2",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a simple project demonstrate thundra usage with knex.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@thundra/core": "^2.5.7",
-    "express": "^4.16.3",
-    "serverless-http": "^1.5.5",
-    "serverless-plugin-thundra-monitor-cw": "^2.4.0"
+    "knex": "^0.19.2",
+    "mysql2": "^1.6.5"
   }
 }
