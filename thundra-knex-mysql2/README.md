@@ -1,4 +1,4 @@
-# Hello Thundra
+# Thundra Knex Mysql2 Demo
 This is a simple example to demonstrate knex with thundra.
 
 ## How to run using [serverless](https://serverless.com/)
