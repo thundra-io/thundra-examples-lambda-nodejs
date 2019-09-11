@@ -1,0 +1,16 @@
+{
+  "name": "thundra-sam-mobilebackend",
+  "version": "1.0.0",
+  "description": "Thundra Sample Application SAM",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-serverless-express": "^3.3.6",
+    "express": "^4.17.1",
+    "uuid": "^3.3.3"
+  }
+}

@@ -88,4 +88,10 @@ This is a simple project demonstrate thundra usage with knex.
 
 [Go to example](./thundra-knex-mysql2)
 
+## thundra-sam-mobilebackend
+
+This is a simple Lambda Project with `aws-serverless-express` which demonstrates Thundra integration via SAM.
+
+[Go to example](./thundra-sam-mobilebackend)
+
 

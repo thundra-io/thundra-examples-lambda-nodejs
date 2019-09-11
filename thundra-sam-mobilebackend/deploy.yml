@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Thundra NodeJS SAM Example
+
+Parameters:
+  ThundraNodeLayerVersion:
+    Type: Number
+    Default: 23
+  ThundraApiKey:
+    Type: String
+    Default: #TODO: enter your API key here
+
+Globals:
+  Function:
+    Runtime: nodejs8.10
+    Timeout: 30
+    MemorySize: 512
+    CodeUri: .
+    Handler: lambda.handler
+    Layers:
+      - !Sub "arn:aws:lambda:${AWS::Region}:269863060030:layer:thundra-lambda-node-layer:${ThundraNodeLayerVersion}"
+    Environment:
+      Variables:
+        thundra_apiKey: !Sub "${ThundraApiKey}"
+        TEAM_TABLE_NAME: !Ref TeamTable
+  Api:
+    EndpointConfiguration: REGIONAL
+    Name: "TeamAPI"
+
+Resources:
+  TeamTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+          Name: id
+          Type: String
+      TableName: Team
+
+  GetTeamFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref TeamTable
+      Events:
+        GetApi:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
