@@ -36,7 +36,7 @@ Resources:
           Type: String
       TableName: Team
 
-  GetTeamFunction:
+  TeamAPIFunction:
     Type: AWS::Serverless::Function
     Properties:
       Policies:
