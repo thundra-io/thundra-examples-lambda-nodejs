@@ -27,8 +27,8 @@ ThundraApiKey:
 In `thundra-examples-lambda-nodejs/thundra-sam-mobilebackend/` directory:
 
 ```bash
-sam package --template-file deploy.yaml --s3-bucket <YOUR-DEPLOYMENT-BUCKET-HERE> --output-template-file deploy.yaml
-sam deploy --template-file ./deploy.yaml --stack-name <YOUR-STACK-NAME-HERE> --capabilities CAPABILITY_IAM
+sam package --template-file deploy.yml --s3-bucket <YOUR-DEPLOYMENT-BUCKET-HERE> --output-template-file deploy.yaml
+sam deploy --template-file deploy.yaml --stack-name <YOUR-STACK-NAME-HERE> --capabilities CAPABILITY_IAM
 ```
 
 #### 4 - Invoke
