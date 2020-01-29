@@ -12,7 +12,7 @@ Parameters:
 
 Globals:
   Function:
-    Runtime: nodejs8.10
+    Runtime: nodejs12.x
     Timeout: 30
     MemorySize: 512
     CodeUri: .
