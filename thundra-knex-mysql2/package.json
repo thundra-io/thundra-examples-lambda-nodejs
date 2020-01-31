@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.5.7",
+    "serverless-plugin-thundra": "2.4.1",
     "knex": "^0.19.2",
     "mysql2": "^1.6.5"
   }

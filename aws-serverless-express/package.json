@@ -9,7 +9,7 @@
   "author": "Thundra",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.5.7",
+    "serverless-plugin-thundra": "2.4.1",
     "aws-serverless-express": "^3.3.6",
     "body-parser": "^1.19.0",
     "express": "^4.17.1"

@@ -6,10 +6,15 @@ custom:
   stage: dev #Configure your stage if you want
   region: #Configure your AWS region if you want
   profile: default #Configure your AWS profile if you want
+  thundra:
+    node:
+      layer:
+        version: latest
+
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   stage: ${self:custom.stage}
   region: ${self:custom.region}
   profile: ${self:custom.profile}
@@ -26,6 +31,9 @@ provider:
       Resource: [
         "*"
       ]
+
+plugins:
+  - serverless-plugin-thundra
 
 functions:
   automatic-instrumentation-example:

@@ -1,14 +1,19 @@
 service: sampling-demo
 
 custom:
-  thundraApiKey: #TODO: enter your API key here
+  thundraApiKey: 712c3050-f138-492b-9ce0-88ed5967054d
   stage: dev #Configure your stage if you want
-  region: us-west-2 #Configure your AWS region if you want
+  region: eu-west-1 #Configure your AWS region if you want
   profile: default #Configure your AWS profile if you want
+  thundra:
+    node:
+      layer:
+        version: latest
+
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   stage: ${self:custom.stage}
   region: ${self:custom.region}
   profile: ${self:custom.profile}
@@ -16,6 +21,7 @@ provider:
   timeout: 300
   environment:
       thundra_apiKey: ${self:custom.thundraApiKey}
+      thundra_agent_lambda_report_rest_baseUrl: https://api-lab.thundra.io/v1/
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -23,6 +29,9 @@ provider:
       Resource: [
         "*"
       ]
+
+plugins:
+  - serverless-plugin-thundra
 
 functions:
   sampling-demo-all:

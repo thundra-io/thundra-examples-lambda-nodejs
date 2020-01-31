@@ -7,10 +7,14 @@ custom:
   region: us-west-2 #Configure your AWS region if you want
   profile: default #Configure your AWS profile if you want
   skipLogGroupCreation: true
+  thundra:
+    node:
+      layer:
+        version: latest
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   stage: ${self:custom.stage}
   region: ${self:custom.region}
   profile: ${self:custom.profile}
@@ -31,6 +35,7 @@ provider:
 
 plugins:
   - serverless-plugin-thundra-monitor-cw
+  - serverless-plugin-thundra
 
 functions:
   express-serverless-http:

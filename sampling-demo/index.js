@@ -15,9 +15,9 @@ const config = {
         sampler: new ErrorAwareSampler(100) // Sample logs if lambda fails
     },
     metricConfig: {
-         sampler: new CountAwareSampler(10) // Sample metrics every 10th invocation
+        sampler: new CountAwareSampler(10) // Sample metrics every 10th invocation
     }
- };
+};
 
 exports.handler = thundra(config)((event, context, callback) => {
     callback(null, {msg: event.msg});
@@ -49,7 +49,7 @@ const customSamplerConfig = {
                 return true;
             }
         }
-    }, 
+    },
 };
 
 exports.handler_custom = thundra(customSamplerConfig)((event, context, callback) => {
