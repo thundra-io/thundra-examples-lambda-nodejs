@@ -5,6 +5,10 @@ custom:
   stage: dev #Configure your stage if you want
   region: us-west-2 #Configure your AWS region if you want
   profile: default #Configure your AWS profile if you want
+  thundra:
+    node:
+      layer:
+        version: latest
 
 provider:
   name: aws
@@ -23,6 +27,9 @@ provider:
       Resource: [
         "*"
       ]
+
+plugins:
+  - serverless-plugin-thundra
 
 functions:
   thundra-node10x:

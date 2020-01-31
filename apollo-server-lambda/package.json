@@ -14,7 +14,7 @@
   "author": "Thundra Team",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.5.7",
+    "serverless-plugin-thundra": "2.4.1",
     "apollo-server-lambda": "^2.4.8",
     "graphql": "^14.2.1"
   }

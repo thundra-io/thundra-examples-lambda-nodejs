@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@thundra/core": "^2.5.7",
+    "serverless-plugin-thundra": "2.4.1",
     "express": "^4.16.3",
     "serverless-http": "^1.5.5",
     "serverless-plugin-thundra-monitor-cw": "^2.4.0"

@@ -5,7 +5,7 @@ Description: Thundra NodeJS SAM Example
 Parameters:
   ThundraNodeLayerVersion:
     Type: Number
-    Default: 23
+    Default: 35
   ThundraApiKey:
     Type: String
     Default: #TODO: enter your API key here

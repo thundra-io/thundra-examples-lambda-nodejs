@@ -24,11 +24,10 @@ exports.handler = thundra(config)((event, context, callback) => {
 });
 
 //////////////////////////////////////////////////////////////////
-const sampler1 = new CountAwareSampler(2); // Samples every 2th.
-const sampler2 = new TimeAwareSampler(3000); // Samples every 3 seconds.
-
+const sampler1 = new CountAwareSampler(5); // Samples every 2th.
+const sampler3 = new ErrorAwareSampler();
 // Create a composite sampler with count and time aware and combine them with AND operator, default is OR
-const sampler = new CompositeSampler([sampler1, sampler2], SamplerCompositionOperator.AND)
+const sampler = new CompositeSampler([sampler1, sampler3], SamplerCompositionOperator.AND)
 
 const compositeConfig = {
     traceConfig: {
@@ -36,22 +35,37 @@ const compositeConfig = {
     },
 };
 
-exports.handler_composite = thundra(compositeConfig)((event, context, callback) => {
-    callback(null, {msg: event.msg});
+exports.handler_composite = thundra(compositeConfig)(async (event) => {
+    
+        throw new Error("custom error");
+    
 });
 
 //////////////////////////////////////////////////////////////////
-const customSamplerConfig = {
-    traceConfig: {
-        sampler: {
-            isSampled: (span) => {
-                // Decide what to do yourself here. return true/false.
-                return true;
-            }
-        }
-    }, 
+const errorSampler = {
+    isSampled: (span) => {
+        console.log(span);
+        return true;
+    }
 };
 
-exports.handler_custom = thundra(customSamplerConfig)((event, context, callback) => {
-    callback(null, {msg: event.msg});
+const countSampler = new CountAwareSampler(3); // Samples every 2th.
+
+const countAndErrorSampler = new CompositeSampler([errorSampler, countSampler], SamplerCompositionOperator.AND)
+
+const customSamplerConfig = {
+    traceConfig: {
+        countSampler
+    },  
+};
+
+exports.handler_custom = thundra(customSamplerConfig)( async (event) => {
+
+    try{
+        console.log(event);
+        throw new Error("custom error");
+    } catch(e){
+        console.log(e);
+        return "hata oldu";
+    }    
 });
