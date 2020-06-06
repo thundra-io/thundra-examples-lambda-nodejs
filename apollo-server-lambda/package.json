@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "serverless-plugin-thundra": "2.4.1",
-    "apollo-server-lambda": "^2.4.8",
+    "apollo-server-lambda": "^2.14.2",
     "graphql": "^14.2.1"
   }
 }
