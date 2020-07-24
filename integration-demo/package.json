@@ -13,6 +13,6 @@
     "license": "ISC",
     "dependencies": {
       "serverless-plugin-thundra": "2.4.1",
-      "pg": "6.4.0"
+      "pg": "6.4.2"
     }
 }
